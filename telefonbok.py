@@ -33,3 +33,11 @@ def leggTilPerson():
     }
     
     telefonbok.append(nyPerson)
+
+#OPPGAVE 4
+def søk():
+    etterlystNavn = input("Søk et navn: ").lower()
+    for person in telefonbok:
+        if etterlystNavn == person["navn"]:
+            print(f"Vi har {etterlystNavn}, Nummer: {person["nummer"]}")
+    print(f"Vi har ikke personen: {etterlystNavn}")
