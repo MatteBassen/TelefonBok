@@ -10,5 +10,11 @@ person2 = {
     "nummer": 46576760
 }
 
-telefonbok.append(person1, person2)
+telefonbok.append(person1)
+telefonbok.append(person2)
 
+def visAlle():
+    for person in telefonbok:
+        print(f"Navn: {person["navn"]}, Nummer: {person["nummer"]}")
+
+visAlle()
