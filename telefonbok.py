@@ -1,3 +1,4 @@
+#OPPGAVE 1
 telefonbok = []
 
 person1 = {
@@ -13,8 +14,22 @@ person2 = {
 telefonbok.append(person1)
 telefonbok.append(person2)
 
+#OPPGAVE 2
 def visAlle():
     for person in telefonbok:
         print(f"Navn: {person["navn"]}, Nummer: {person["nummer"]}")
 
-visAlle()
+#OPPGAVE 3
+def leggTilPerson():
+    print("Legg til en person inn i databasen her")
+    
+    leggTilNavn = input("Hva er navnet til personen? ")
+    leggTilNummer = input("Hva er nummeret til personen? ")
+    print(f"Informasjon opprettet: Navn: {nyPerson["navn"]}, Nummer: {nyPerson["nummer"]}")
+    
+    nyPerson = {
+        "navn": leggTilNavn,
+        "nummer": leggTilNummer
+    }
+    
+    telefonbok.append(nyPerson)
