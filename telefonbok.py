@@ -41,3 +41,5 @@ def søk():
         if etterlystNavn == person["navn"]:
             print(f"Vi har {etterlystNavn}, Nummer: {person["nummer"]}")
     print(f"Vi har ikke personen: {etterlystNavn}")
+
+#OPPGAVE 5
