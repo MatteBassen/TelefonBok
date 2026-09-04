@@ -1,3 +1,4 @@
+import sys
 #OPPGAVE 1
 telefonbok = []
 
@@ -25,21 +26,53 @@ def leggTilPerson():
     
     leggTilNavn = input("Hva er navnet til personen? ")
     leggTilNummer = input("Hva er nummeret til personen? ")
-    print(f"Informasjon opprettet: Navn: {nyPerson["navn"]}, Nummer: {nyPerson["nummer"]}")
     
     nyPerson = {
         "navn": leggTilNavn,
         "nummer": leggTilNummer
     }
     
+    print(f"Informasjon opprettet: Navn: {nyPerson["navn"]}, Nummer: {nyPerson["nummer"]}")
     telefonbok.append(nyPerson)
 
 #OPPGAVE 4
 def søk():
     etterlystNavn = input("Søk et navn: ").lower()
+    funnet = False
+    
     for person in telefonbok:
         if etterlystNavn == person["navn"]:
             print(f"Vi har {etterlystNavn}, Nummer: {person["nummer"]}")
-    print(f"Vi har ikke personen: {etterlystNavn}")
+            funnet = True
+    
+    if not funnet:
+        print(f"Vi har ikke personen: {etterlystNavn}")
+    
+def hovemeny():
+    print("1. Vis Alle \n2. legg til ny \n3. Søk \n 4. Avslutt")
+    
+    valg = input("Hva vil du gjøre? ").lower()
+                
+    if valg in ["1", "vis alle"]:
+        print("Du valgte: Vis Alle")
+        visAlle()
+                
+    elif valg in ["2", "legg til ny"]:
+        print("Du valgte: Legg til ny")
+        leggTilPerson()
+            
+    elif valg in ["3", "søk"]:
+            print("Du valgte: søk")
+            søk()
+    
+    elif valg in ["4", "avslutt"]:
+            print("Du valgte: Avslutt, programmet avsluttes")
+            sys.exit()
 
+    else:
+        print("Ugyldig valg")
+        
 #OPPGAVE 5
+while True:
+    hovemeny()
+
