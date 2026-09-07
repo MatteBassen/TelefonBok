@@ -47,9 +47,12 @@ def søk():
     
     if not funnet:
         print(f"Vi har ikke personen: {etterlystNavn}")
+        
+        
+#OPPGAVE 5
+while True:
     
-def hovemeny():
-    print("1. Vis Alle \n2. legg til ny \n3. Søk \n 4. Avslutt")
+    print("1. Vis Alle \n2. legg til ny \n3. Søk \n4. Avslutt")
     
     valg = input("Hva vil du gjøre? ").lower()
                 
@@ -67,12 +70,7 @@ def hovemeny():
     
     elif valg in ["4", "avslutt"]:
             print("Du valgte: Avslutt, programmet avsluttes")
-            sys.exit()
+            break
 
     else:
         print("Ugyldig valg")
-        
-#OPPGAVE 5
-while True:
-    hovemeny()
-
